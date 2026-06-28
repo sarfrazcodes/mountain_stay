@@ -1,76 +1,61 @@
-# Mountain Stay — Hotel Website Template
+# Mountain Stay
 
-A premium, fully static hotel website template for a fictional boutique resort
-in Mussoorie, Uttarakhand. Built with HTML5, CSS3, Bootstrap 5, and vanilla
-JavaScript only — no backend, no database, no booking engine, no payment
-gateway.
+Mountain Stay is a simple and responsive hotel website template built using **HTML**, **CSS**, **Bootstrap 5**, and **JavaScript**.
 
-## Folder Structure
+This project is frontend only and does not include a backend, booking system, or payment gateway.
 
-```
+## Project Structure
+
+```text
 MountainStay/
-├── index.html        Homepage
-├── about.html         About page
-├── rooms.html          Rooms & Suites page
-├── gallery.html         Gallery page (filterable + lightbox)
-├── contact.html          Contact page (static form, no backend)
+├── index.html
+├── about.html
+├── rooms.html
+├── gallery.html
+├── contact.html
 ├── css/
-│   ├── style.css         Design tokens + all component styles
-│   └── responsive.css      Breakpoint overrides
+│   ├── style.css
+│   └── responsive.css
 ├── js/
-│   └── main.js              Navbar, preloader, reveal animations, gallery filter, lightbox, form UX
-'''
-## Replacing the Placeholder Images
-
-Every image slot in this template is a `<div class="ms-img-placeholder">`
-with a `data-label` attribute showing the exact file path it expects, e.g.:
-
-```html
-<div class="ms-img-placeholder ms-img-room" data-label="assets/images/room-deluxe.jpg">
-  <i class="bi bi-image"></i>
-</div>
+│   └── main.js
+└── assets/
+    └── images/
 ```
 
-To go live with real photography:
+## Features
 
-1. Save your photo into `assets/images/` using the filename shown in that
-   element's `data-label` (e.g. `room-deluxe.jpg`).
-2. Replace the placeholder `<div>` with an `<img>` tag:
-   ```html
-   <img src="assets/images/room-deluxe.jpg" alt="Deluxe Valley Room" class="ms-img-room-photo">
-   ```
-   — or simply set it as a CSS `background-image` on the existing div and
-   remove the `<i class="bi bi-image"></i>` icon and the placeholder styles.
-3. Recommended sizes: hero images ≥ 1920×1080px, room/gallery images ≥
-   1200×900px, team headshots ≥ 600×600px — all as compressed `.jpg` or
-   `.webp` for fast loading.
+* Responsive design
+* Modern hotel landing page
+* About page
+* Rooms page
+* Gallery with filters and lightbox
+* Contact form with frontend validation
+* Smooth animations
 
-## "Book Now" Behaviour
+## Images
 
-Per the brief, there is no booking engine. Every "Book Now" button links to
-either `contact.html` or a WhatsApp deep link
-(`https://wa.me/911234567890`). Update the phone number in that link across
-all five HTML files before deploying.
+The project uses placeholder image containers.
+
+To replace them:
+
+1. Add your images inside the `assets/images` folder.
+2. Replace the placeholder `<div>` with an `<img>` tag or use a CSS background image.
+3. Update the filenames if needed.
 
 ## Contact Form
 
-The form on `contact.html` is **front-end only**. It validates required
-fields with Bootstrap's built-in validation and shows a confirmation
-message — nothing is sent anywhere. To make it functional, connect it to a
-form backend of your choice (e.g. Formspree, EmailJS, Netlify Forms, or a
-custom mail script) by updating the `<form>` tag's `action`/`method` and the
-submit handler in `js/main.js` (`initContactForm`).
+The contact form is for frontend demonstration only. It validates user input but does not send any data.
 
-## Fonts & Colors
+You can connect it to services like Formspree, EmailJS, or your own backend if required.
 
-- **Display font:** Playfair Display (headings)
-- **Body font:** Poppins (UI text, paragraphs)
-- **Palette:** Forest Green `#2E5E4E`, Deep Forest `#203A32`, Luxury Gold
-  `#D4AF37`, Warm White `#F8F7F3`, Charcoal `#1F1F1F` — all defined as CSS
-  custom properties at the top of `css/style.css` under `:root`.
+## Book Now
+
+The **Book Now** buttons currently redirect to the contact page or a WhatsApp link. Update the WhatsApp number before deploying the project.
 
 ## Browser Support
 
-Modern evergreen browsers (Chrome, Firefox, Safari, Edge). Uses
-`IntersectionObserver` for scroll-reveal animations with a graceful
-fallback for older browsers, and respects `prefers-reduced-motion`.
+Works on all modern browsers including Chrome, Firefox, Edge, and Safari.
+
+## Author
+
+Developed by **Mohd Sarfraz Saifi**
