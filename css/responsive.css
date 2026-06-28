@@ -5,6 +5,13 @@
    Bootstrap 5 breakpoints referenced: xl(1200) lg(992) md(768) sm(576)
    ================================================================= */
 
+/* Global reset for overflow issues on mobile viewport */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 /* -----------------------------------------------------------------
    LARGE DESKTOPS / WIDE SCREENS (≥1400px)
    Add a little extra breathing room on very wide viewports.
@@ -93,6 +100,11 @@
   .ms-gallery-wide {
     grid-column: span 2;
   }
+
+  /* Gallery masonry: 2 columns instead of 4 on tablets */
+  .ms-gallery-masonry {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* -----------------------------------------------------------------
@@ -164,13 +176,81 @@
 
   /* Stat row: stack vertically with dividers instead of 3-up columns */
   .ms-stat-row .col-4 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
     border-right: none !important;
+    border-bottom: 1px solid var(--ms-line);
+    padding: 1rem 0;
   }
 
-  /* Gallery preview: single column on phones */
+  .ms-stat-row .col-4:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Make cards 2-up in a row and adjust spacing/font sizes */
+  .ms-why-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .ms-why-icon {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .ms-why-title {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .ms-room-body {
+    padding: 1rem !important;
+  }
+
+  .ms-room-title {
+    font-size: 1rem !important;
+  }
+
+  .ms-attraction-title {
+    font-size: 0.95rem !important;
+  }
+
+  .ms-facility-item {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .ms-facility-item i {
+    font-size: 1.25rem !important;
+  }
+
+  .ms-facility-item p {
+    font-size: 0.8rem !important;
+  }
+
+  .ms-contact-info-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .ms-contact-info-card i {
+    font-size: 1.5rem !important;
+  }
+
+  .ms-contact-info-card h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .ms-room-detail-body {
+    padding: 1.5rem !important;
+  }
+
+  .ms-map-frame {
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  /* Gallery preview: 2 columns on phones */
   .ms-gallery-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: none !important;
     gap: 0.6rem;
   }
 
@@ -178,6 +258,31 @@
     aspect-ratio: 4 / 3 !important;
     grid-column: auto !important;
     grid-row: auto !important;
+  }
+
+  .ms-gallery-grid .ms-gallery-wide {
+    grid-column: span 2 !important;
+    aspect-ratio: 2 / 1 !important;
+  }
+
+  /* Gallery masonry: 2 columns on phones */
+  .ms-gallery-masonry {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem;
+  }
+
+  .ms-gallery-masonry .ms-img-placeholder {
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .ms-gallery-masonry .ms-span-row-2 {
+    grid-row: span 1;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .ms-gallery-masonry .ms-span-col-2 {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1 !important;
   }
 
   .ms-back-to-top {
