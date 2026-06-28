@@ -1,0 +1,222 @@
+/* =================================================================
+   MOUNTAIN STAY — RESPONSIVE STYLESHEET
+   Breakpoint-specific overrides. Loaded after style.css so rules here
+   take precedence at the relevant screen sizes.
+   Bootstrap 5 breakpoints referenced: xl(1200) lg(992) md(768) sm(576)
+   ================================================================= */
+
+/* -----------------------------------------------------------------
+   LARGE DESKTOPS / WIDE SCREENS (≥1400px)
+   Add a little extra breathing room on very wide viewports.
+   ----------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  .ms-hero-content {
+    max-width: 880px;
+  }
+
+  .ms-section {
+    padding: 8rem 0;
+  }
+}
+
+/* -----------------------------------------------------------------
+   LAPTOPS / SMALL DESKTOPS (max-width: 1199.98px)
+   ----------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+  .ms-gallery-grid {
+    grid-template-rows: repeat(2, 170px);
+  }
+}
+
+/* -----------------------------------------------------------------
+   TABLETS — LANDSCAPE / SMALL LAPTOPS (max-width: 991.98px)
+   ----------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  :root {
+    --ms-nav-height: 72px;
+  }
+
+  .ms-section {
+    padding: 4.5rem 0;
+  }
+
+  .ms-cta {
+    padding: 4rem 0;
+  }
+
+  /* Mobile nav dropdown panel styling */
+  .ms-navbar .navbar-collapse {
+    background-color: var(--ms-warm-white);
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(31, 31, 31, 0.15);
+  }
+
+  .ms-navbar .nav-link,
+  .ms-navbar.is-scrolled .nav-link {
+    color: var(--ms-charcoal);
+    padding: 0.6rem 0.5rem;
+  }
+
+  .ms-navbar .nav-link::after {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .ms-navbar .ms-btn-gold {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  /* About section: stack media above text, remove floating overlap */
+  .ms-about-media {
+    padding-right: 0;
+    padding-bottom: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .ms-about-media .ms-img-float {
+    width: 60%;
+  }
+
+  /* Gallery grid: 2 columns instead of 4 on tablets */
+  .ms-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 200px);
+  }
+
+  .ms-gallery-tall {
+    grid-row: span 1;
+  }
+
+  .ms-gallery-wide {
+    grid-column: span 2;
+  }
+}
+
+/* -----------------------------------------------------------------
+   TABLETS — PORTRAIT / LARGE PHONES (max-width: 767.98px)
+   ----------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .ms-hero {
+    min-height: 92vh;
+  }
+
+  .ms-hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .ms-section-title {
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+  }
+
+  .ms-stat-row {
+    text-align: center;
+  }
+
+  .ms-why-card,
+  .ms-room-card,
+  .ms-testimonial-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Facilities grid breathes better at 2-up on small tablets */
+  .ms-facility-item {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .ms-page-hero {
+    min-height: 38vh;
+  }
+}
+
+/* -----------------------------------------------------------------
+   PHONES (max-width: 575.98px)
+   ----------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .ms-brand-mark {
+    font-size: 1.25rem;
+  }
+
+  .ms-hero-title {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .ms-hero-rule {
+    margin: 1.25rem auto;
+  }
+
+  .ms-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ms-hero-actions .btn,
+  .ms-hero-actions a {
+    width: 100%;
+  }
+
+  /* Stat row: stack vertically with dividers instead of 3-up columns */
+  .ms-stat-row .col-4 {
+    border-right: none !important;
+  }
+
+  /* Gallery preview: single column on phones */
+  .ms-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 0.6rem;
+  }
+
+  .ms-gallery-item {
+    aspect-ratio: 4 / 3 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .ms-back-to-top {
+    bottom: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .ms-about-media .ms-img-float {
+    width: 70%;
+  }
+
+  .ms-footer {
+    text-align: center;
+  }
+
+  .ms-footer-text {
+    margin: 0 auto;
+  }
+
+  .ms-footer-social {
+    justify-content: center;
+  }
+
+  .ms-footer-bottom {
+    text-align: center;
+  }
+}
+
+/* -----------------------------------------------------------------
+   EXTRA SMALL PHONES (max-width: 359.98px)
+   ----------------------------------------------------------------- */
+@media (max-width: 359.98px) {
+  .ms-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .ms-section {
+    padding: 3.5rem 0;
+  }
+}
